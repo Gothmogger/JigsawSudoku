@@ -1,0 +1,15 @@
+@media (min-width: 0){
+    .pa30 {
+        padding: 2.14286rem !important;
+    }
+}
+
+.shadow {
+    box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.15);
+}
+
+.mediaComment {
+    margin-top:20px;
+    background-color: #212326;
+    border-radius: 20px;
+}
