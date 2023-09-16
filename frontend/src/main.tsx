@@ -42,3 +42,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     </BrowserRouter>
   </React.StrictMode>
 );
+
+/*
+  React loading skeleton - inherits text height and lineheight from container. If you want precise heeight, set lineHeight to 1(if you are not replacing text with skeleton)
+*/

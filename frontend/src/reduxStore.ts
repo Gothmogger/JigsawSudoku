@@ -26,7 +26,7 @@ const rootReducer: Reducer = (state: RootState, action: AnyAction) => {
   ) {
     return persistedReducer({ ...state, game: undefined as any }, action); // _persist property gets preserved, !!! IMPORTANT !!!
   } else if (action.type === REHYDRATE && action.payload) { // payload can be undefined when local storage is empty on first start
-    if (Date.now() > action.payload.session.timeToLive || state.session.CSRFToken != action.payload.session.CSRFToken) // The or condition is there because if you run the backend server in dev, it will create session, then you end and run in prod. The session does not get loaded(default settings), new session gets created but the browser request for html is not accessible to javascript. So, the only way to know session changed is by checking the token 
+    if (Date.now() > action.payload.session.timeToLive || (state.session.CSRFToken != action.payload.session.CSRFToken && state.session.CSRFToken)) // The or condition is there because if you run the backend server in dev, it will create session, then you end and run in prod. The session does not get loaded(default settings), new session gets created but the browser request for html is not accessible to javascript. So, the only way to know session changed is by checking the token 
       return persistedReducer({ ...state, game: undefined as any, session: undefined as any }, action);
   }
   return persistedReducer(state, action);

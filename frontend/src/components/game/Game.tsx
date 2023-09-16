@@ -183,11 +183,11 @@ function Game() {
         setTileValue={setTileValue}
         setTileMarkings={setTileMarkings}
       ></Field>
-      <div className="mx-auto w-50">
+      <div className="mx-auto w-50" style={{ lineHeight: 1 }}>
         {board != undefined ? (
           <ProgressBar completed={String(score)} maxCompleted={maxScore} />
         ) : (
-          <Skeleton borderRadius={10} />
+          <Skeleton borderRadius={10} height={"20px"} />
         )}
       </div>
       <Button
